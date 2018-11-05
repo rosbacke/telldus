@@ -33,11 +33,11 @@ IF (WIN32)
 	)
 ELSEIF (APPLE)
 	TARGET_LINK_LIBRARIES(tdtool
-		TelldusCore
+		TelldusCore pthread
 	)
 ELSE (WIN32)
 	TARGET_LINK_LIBRARIES(tdtool
-		${CMAKE_BINARY_DIR}/client/libtelldus-core.so
+		${CMAKE_BINARY_DIR}/client/libtelldus-core.so pthread
 	)
 ENDIF (WIN32)
 

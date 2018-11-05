@@ -163,6 +163,9 @@ ELSE (APPLE) #### Linux ####
 	FIND_LIBRARY(CONFUSE_LIBRARY confuse)
 	ADD_DEFINITIONS( -D_CONFUSE )
 	ADD_DEFINITIONS( -D_LINUX )
+	ADD_DEFINITIONS( -D_LINUX )
+	set (CMAKE_CXX_FLAGS "-std=c++98 -Wno-deprecated-declarations -pthread")
+	set (CMAKE_CC_FLAGS "-std=c99 -pthread")
 
 	SET( telldus-service_TARGET	telldusd )
 	LIST(APPEND telldus-service_SRCS
